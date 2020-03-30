@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXChipView?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.DashboardController">
+    <center>
+        <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" > <!-- stylesheets="@/static/grey.css"-->
+            <!--        CALENDAR FX    -->
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane prefHeight="46.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton buttonType="RAISED" layoutX="822.0" layoutY="13.0" ripplerFill="#a7a4a4" text="MyAccount" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect></JFXButton>
+                <JFXHamburger layoutX="25.0" layoutY="16.0" />
+                <JFXButton buttonType="RAISED" layoutX="666.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Pull" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" layoutX="743.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Push" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </top>
+    <bottom>
+        <AnchorPane prefHeight="39.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton buttonType="RAISED" onAction="#sceneCalendar" layoutX="796.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Calendar" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" onAction="#sceneNotepad" layoutX="706.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Notepad" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" onAction="#sceneDashboard" layoutX="600.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Dashboard" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Add Task" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+                <JFXButton buttonType="RAISED" layoutX="112.0" layoutY="12.0" ripplerFill="#a7a4a4" text="Add Note" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </JFXButton>
+            </children></AnchorPane>
+    </bottom>
+</BorderPane>
