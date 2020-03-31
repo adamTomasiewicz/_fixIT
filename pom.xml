@@ -4,13 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <groupId>com.dlsc.workbenchfx</groupId>
     <artifactId>fixIT-organizer-app_javaFX-workbenchFX_fin</artifactId>
     <version>8.1.0</version>
     <packaging>jar</packaging>
-
-
 
     <!--PROPERTIES-->
     <properties>
@@ -18,7 +15,7 @@
         <sourceEncoding>UTF-8</sourceEncoding>  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <source>1.8</source><compile>1.8</compile> <target>1.8</target>
         <maven.compiler.source>1.8</maven.compiler.source><maven.compiler.target>1.8</maven.compiler.target>
-        <maven.deploy.skip>true</maven.deploy.skip>
+<!--        <maven.deploy.skip>true</maven.deploy.skip>-->
     </properties>
 
     <!--MODULES-->
@@ -27,27 +24,6 @@
 
     <dependencies>
 
-        <!--Java FX-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.openjfx</groupId>-->
-        <!--            <artifactId>javafx-controls</artifactId>-->
-        <!--            <version>1.8-ea+8</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.openjfx</groupId>-->
-        <!--            <artifactId>javafx-fxml</artifactId>-->
-        <!--            <version>1.8-ea+8</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.openjfx</groupId>-->
-        <!--            <artifactId>javafx-base</artifactId>-->
-        <!--            <version>1.8-ea+8</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.openjfx</groupId>-->
-        <!--            <artifactId>javafx-graphics</artifactId>-->
-        <!--            <version>1.8-ea+7</version>-->
-        <!--        </dependency>-->
         <!--JFoeniX-->
         <!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
         <dependency>
@@ -62,14 +38,6 @@
             <artifactId>workbenchfx-core</artifactId>
             <version>8.1.0</version>
         </dependency>
-        <!-- Libraries -->
-        <!--controlsFX-->
-        <!--https://github.com/controlsfx/controlsfx/wiki/ControlsFX-Features-->
-        <dependency>
-            <groupId>org.controlsfx</groupId>
-            <artifactId>controlsfx</artifactId>
-            <version>8.40.16</version>
-        </dependency>
         <!--calendarFX-->
         <!--https://github.com/dlsc-software-consulting-gmbh/CalendarFX-->
         <dependency>
@@ -77,30 +45,58 @@
             <artifactId>view</artifactId>
             <version>8.6.1</version>
         </dependency>
+        <!-- Libraries -->
+        <!--controlsFX-->
+        <!--https://github.com/controlsfx/controlsfx/wiki/ControlsFX-Features-->
+<!--        <dependency>-->
+<!--            <groupId>org.controlsfx</groupId>-->
+<!--            <artifactId>controlsfx</artifactId>-->
+<!--            <version>8.40.16</version>-->
+<!--        </dependency>-->
+
         <!--formsFX-->
         <!--https://github.com/dlsc-software-consulting-gmbh/FormsFX-->
-        <dependency>
-            <groupId>com.dlsc.formsfx</groupId>
-            <artifactId>formsfx-core</artifactId>
-            <version>8.4.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.dlsc.formsfx</groupId>-->
+<!--            <artifactId>formsfx-core</artifactId>-->
+<!--            <version>8.4.0</version>-->
+<!--        </dependency>-->
         <!--        pickerFX-->
         <!--         https://github.com/dlsc-software-consulting-gmbh/PickerFX-->
-        <dependency>
-            <groupId>com.dlsc.pickerfx</groupId>
-            <artifactId>pickerfx</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.dlsc.pickerfx</groupId>-->
+<!--            <artifactId>pickerfx</artifactId>-->
+<!--            <version>1.0.2</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>controlsfx</artifactId>-->
+<!--                    <groupId>org.controlsfx</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>javafx-controls</artifactId>-->
+<!--                    <groupId>org.openjfx</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>javafx-fxml</artifactId>-->
+<!--                    <groupId>org.openjfx</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.dlsc.preferencesfx</groupId>
             <artifactId>preferencesfx-core</artifactId>
             <version>8.6.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>controlsfx</artifactId>
+                    <groupId>org.controlsfx</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.lynden</groupId>-->
-<!--            <artifactId>GMapsFX</artifactId>-->
-<!--            <version>2.12.0</version>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>de.jensd</groupId>
@@ -110,7 +106,7 @@
         <dependency>
             <groupId>de.jensd</groupId>
             <artifactId>fontawesomefx-fontawesome</artifactId>
-            <version>4.7.0-11</version>
+            <version>4.7.0-9.1.2</version>
         </dependency>
         <dependency>
             <groupId>de.jensd</groupId>
@@ -120,13 +116,6 @@
 
 
         <!-- Utils -->
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -136,7 +125,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>2.13.1</version>
+            <version>2.12.1</version>
         </dependency>
         <!-- SLF4J Bridge -->
         <dependency>
@@ -144,38 +133,32 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.12.1</version>
         </dependency>
-        <!-- FlexganttFX -->
-<!--        <dependency>-->
-<!--            <groupId>com.flexganttfx</groupId>-->
-<!--            <artifactId>core</artifactId>-->
-<!--            <version>1.7.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.flexganttfx</groupId>-->
-<!--            <artifactId>extras</artifactId>-->
-<!--            <version>1.7.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.flexganttfx</groupId>-->
-<!--            <artifactId>model</artifactId>-->
-<!--            <version>1.7.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.flexganttfx</groupId>-->
-<!--            <artifactId>view</artifactId>-->
-<!--            <version>1.7.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.license4j</groupId>-->
-<!--            <artifactId>license4j</artifactId>-->
-<!--            <version>1.4.0</version>-->
-<!--        </dependency>-->
-
     </dependencies>
 
     <!--BUILD-->
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
+                <version>1.4.4</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <mainClass>com.dlsc.workbenchfx.FixIT_ver2</mainClass>
+                            <attachToBuild>true</attachToBuild>
+                            <filename>
+                                ${project.build.finalName}.${project.packaging}
+                            </filename>
+                        </configuration>
+                        <goals>
+                            <goal>one-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>

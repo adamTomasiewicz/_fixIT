@@ -75,7 +75,7 @@ public class FixIT_ver2 extends Application {
     toolbarButtonLoadTestData.setOnClick(event -> workbench.showConfirmationDialog("Load Test Data",
             "Are you sure you want to load test data?", buttonType -> {
               if(buttonType.getText().equals("Yes")) {
-               fixItUtils.testMethod();
+               fixItUtils.loadTestData();
               }}));
 
     toolbarButtonPullData.setOnClick(event -> workbench.showConfirmationDialog("Pull Data",

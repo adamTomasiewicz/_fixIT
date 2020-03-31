@@ -16,54 +16,51 @@
 
 package com.dlsc.workbenchfx.modules.calendar;
 
-import com.calendarfx.model.Calendar;
-import com.calendarfx.model.Calendar.Style;
-import com.calendarfx.model.CalendarSource;
-import com.calendarfx.model.Entry;
-import com.calendarfx.view.CalendarView;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
-import com.calendarfx.view.DayView;
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.view.CalendarView;
 import javafx.application.Platform;
 import javafx.scene.layout.StackPane;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class CalendarFxView extends StackPane {
 
   private Thread updateTimeThread;
   boolean running = false;
- private Calendar entries_Urgent_Important = new Calendar("Urgent-Important");
-  private Calendar entries_Urgent_nImportant = new Calendar("Urgent-nImportant");
-  private Calendar entries_nUrgent_Important = new Calendar("nUrgent-Important");
-  private Calendar entries_nUrgent_nImportant = new Calendar("nUrgent-nImportant");
-  private Calendar entries_OfficialMatters = new Calendar("Official Matters");
-  private Calendar entries_ShoppingList = new Calendar("Shopping List");
+ private static Calendar entries_Urgent_Important = new Calendar("Urgent-Important");
+  private static Calendar entries_Urgent_nImportant = new Calendar("Urgent-nImportant");
+  private static Calendar entries_nUrgent_Important = new Calendar("nUrgent-Important");
+  private static Calendar entries_nUrgent_nImportant = new Calendar("nUrgent-nImportant");
+  private static Calendar entries_OfficialMatters = new Calendar("Official Matters");
+  private static Calendar entries_ShoppingList = new Calendar("Shopping List");
 
-  public Calendar getEntries_Urgent_Important() {
+  public static Calendar getEntries_Urgent_Important() {
     return entries_Urgent_Important;
   }
-  public Calendar getEntries_Urgent_nImportant() {
+  public static Calendar getEntries_Urgent_nImportant() {
     return entries_Urgent_nImportant;
   }
-  public Calendar getEntries_nUrgent_Important() {
+  public static Calendar getEntries_nUrgent_Important() {
     return entries_nUrgent_Important;
   }
-  public Calendar getEntries_nUrgent_nImportant() {
+  public static Calendar getEntries_nUrgent_nImportant() {
     return entries_nUrgent_nImportant;
   }
-  public Calendar getEntries_OfficialMatters() {
+  public static Calendar getEntries_OfficialMatters() {
     return entries_OfficialMatters;
   }
-  public Calendar getEntries_ShoppingList() {
+  public static Calendar getEntries_ShoppingList() {
     return entries_ShoppingList;
   }
 
 
+
+
   public CalendarFxView() {
     CalendarView calendarView = new CalendarView();
-
-
-
 
 
     entries_Urgent_Important.setShortName("U-I");
@@ -73,12 +70,12 @@ public class CalendarFxView extends StackPane {
     entries_OfficialMatters.setShortName("OM");
     entries_ShoppingList.setShortName("SL");
 
-    entries_Urgent_Important.setStyle(Style.STYLE1);
-    entries_Urgent_nImportant.setStyle(Style.STYLE2);
-    entries_nUrgent_Important.setStyle(Style.STYLE3);
-    entries_nUrgent_nImportant.setStyle(Style.STYLE4);
-    entries_OfficialMatters.setStyle(Style.STYLE5);
-    entries_ShoppingList.setStyle(Style.STYLE6);
+    entries_Urgent_Important.setStyle(Calendar.Style.STYLE1);
+    entries_Urgent_nImportant.setStyle(Calendar.Style.STYLE2);
+    entries_nUrgent_Important.setStyle(Calendar.Style.STYLE3);
+    entries_nUrgent_nImportant.setStyle(Calendar.Style.STYLE4);
+    entries_OfficialMatters.setStyle(Calendar.Style.STYLE5);
+    entries_ShoppingList.setStyle(Calendar.Style.STYLE6);
 
     CalendarSource localCalendarSource = new CalendarSource("LocalCalendar");
     localCalendarSource.getCalendars().addAll(

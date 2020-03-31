@@ -1,5 +1,8 @@
 package com.dlsc.workbenchfx.modules.preferences;
 
+
+import java.util.Arrays;
+
 import com.dlsc.formsfx.model.structure.Field;
 import com.dlsc.formsfx.model.structure.IntegerField;
 import com.dlsc.formsfx.model.validators.DoubleRangeValidator;
@@ -9,7 +12,6 @@ import com.dlsc.preferencesfx.model.Category;
 import com.dlsc.preferencesfx.model.Group;
 import com.dlsc.preferencesfx.model.Setting;
 import com.dlsc.preferencesfx.view.PreferencesFxView;
-import java.util.Arrays;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
